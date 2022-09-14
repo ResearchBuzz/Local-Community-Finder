@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>ResearchBuzz Search Gizmos: Fresh Local Search</title>
+		<title>ResearchBuzz Search Gizmos: Local Community Finder</title>
 		<style type="text/css">
 			html, #page { padding:0; margin:0;}
 			body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
@@ -107,7 +107,11 @@
 
 </div>
 
- <button onclick="freshfilter()">Freshen Your Search Results</button><br><br>
+<div id="twitter">
+
+</div>
+
+ <button onclick="freshfilter()">Find Your Local Community </button><br><br>
 
  
 
@@ -182,8 +186,6 @@ var zip = document.querySelector('.zip').value;
 var local = document.querySelector('.local').value;
 local = Number(local) 
 
-
-let locationVar =[]
 let latlongs = []
 let locals=[]
 let localchoice =""
@@ -220,30 +222,22 @@ fetch(api_url)
 
    var city = mapdata[0].address.city 
    console.log(city)
-      locationVar.push(city)
+   if (city){}
+   else {var city = mapdata[0].address.town}
    var county = mapdata[0].address.county 
    console.log(county)
-   locationVar.push(county)
    var state = mapdata[0].address.state 
    console.log(state)
-   locationVar.push(state)
    var lat = mapdata[0].lat
    console.log(lat)
-   latlongs.push(lat)
    var lon = mapdata[0].lon
    console.log(lon)
-   latlongs.push(lon)
+
 
 let locals = ["("+zip+")","("+zip+" | \""+city+"\")"]
 
 console.log(locals)
 localchoice = locals[local]
-console.log(localchoice)
-
-
-
-console.log(locationVar)
-console.log(latlongs)
 console.log(localchoice)
 
 
@@ -262,7 +256,7 @@ var completeURL = GoogleBase+QuerySuffix
 console.log(completeURL)
 
 var Bdiv = document.getElementById("results")
-Bdiv.innerHTML = "<a href=\""+completeURL+" target=\"_blank\">Click here for local Google results</a>"  
+Bdiv.innerHTML = "<a href=\""+completeURL+"\" target=\"_blank\">Click here to search for local community</a>"  
 
 })
 
