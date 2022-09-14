@@ -103,6 +103,10 @@
 </select><br><br>
 
 
+<div id="results">
+
+</div>
+
  <button onclick="freshfilter()">Freshen Your Search Results</button><br><br>
 
  
@@ -256,6 +260,9 @@ console.log(QuerySuffix)
 var completeURL = GoogleBase+QuerySuffix
 
 console.log(completeURL)
+
+var Bdiv = document.getElementById("results")
+Bdiv.innerHTML = "<a href=\""+completeURL+" target=\"_blank\">Click here for local Google results</a>"  
 
 })
 
