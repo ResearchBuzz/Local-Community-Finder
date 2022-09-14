@@ -1,0 +1,265 @@
+ <!DOCTYPE html>
+<!-- Template by html.am -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>ResearchBuzz Search Gizmos: Fresh Local Search</title>
+		<style type="text/css">
+			html, #page { padding:0; margin:0;}
+			body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
+			h1, h2, h3, h4, h5, h6 {color:darkblue;}
+			#page { background:#fff;}
+			#header, #footer, #top-nav, #content, #content #contentbar, #content #sidebar { margin:0; padding:0;}
+						
+			/* Logo */
+			#logo { padding:0; width:auto; float:left;}
+			#logo h1 a, h1 a:hover { color:darkblue; text-decoration:none;}
+			#logo h1 span { color:#24592c;}
+
+			/* Header */
+			#header { background:#fff; }
+			#header-inner { margin:0 auto; padding:0; width:970px;}
+			
+			/* Feature */
+			.feature { background:blue;padding:18px;}
+			.feature-inner { margin:auto;width:970px; }
+			.feature-inner h1 {color:#E9E9FC;font-size:32px;}
+			
+			/* Menu */
+			#top-nav { margin:0 auto; padding:0px 0 0; height:37px; float:right;}
+			#top-nav ul { list-style:none; padding:0; height:37px; float:left;}
+			#top-nav ul li { margin:0; padding:0 0 0 8px; float:left;}
+			#top-nav ul li a { display:block; margin:0; padding:8px 20px; color:blue; text-decoration:none;}
+			#top-nav ul li.active a, #top-nav ul li a:hover { color:#d3d3f9;}
+			
+			/* Content */
+			#content-inner { margin:0 auto; padding:10px 0; width:970px;background:#fff;}
+			#content #contentbar { margin:0; padding:0; float:right; width:760px;}
+			#content #contentbar .article {  font-size: 1.25em; color: black; margin:0 0 24px; padding:0 20px 0 15px; }
+			#content #sidebar { background-color:#ECFFDC; padding:0; float:left; width:200px;}
+			#content #sidebar .widget { margin:0 0 12px; padding:8px 8px 8px 13px;line-height:1.4em;}
+			#content #sidebar .widget h3 a { text-decoration:none;}
+			#content #sidebar .widget ul { margin:0; padding:0; list-style:none; color:#959595;}
+			#content #sidebar .widget ul li { margin:0;}
+			#content #sidebar .widget ul li { padding:4px 0; width:185px;}
+			#content #sidebar .widget ul li a {font-size: 1.25em; color:black; text-decoration:none; margin-left:-16px; padding:4px 8px 4px 16px;}
+			#content #sidebar .widget ul li a:hover { color:#d3d3f9; font-weight:bold; text-decoration:none;}
+			
+			/* Footerblurb */
+			#footerblurb { background:#d3d3f9;color:blue;}
+			#footerblurb-inner { margin:0 auto; width:922px; padding:24px;}
+			#footerblurb .column { margin:0; text-align:justify; float:left;width:250px;padding:0 24px;}
+			
+			/* Footer */
+			#footer { background:#fff;}
+			#footer-inner { margin:auto; text-align:center; padding:12px; width:922px;}
+			#footer a {color:blue;text-decoration:none;}
+			
+			/* Clear both sides to assist with div alignment  */
+			.clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+		</style>
+		
+
+	</head>
+	<body>
+		<div id="page">
+			<header id="header">
+				<div id="header-inner">	
+					<div id="logo">
+						<h1><a href="#">ResearchBuzz<span>Search Gizmos</span></a></h1>
+					</div>
+					<div id="top-nav">
+						<ul>
+						<li><a href="https://github.com/ResearchBuzz">ResearchBuzz GitHub Home</a></li>
+						<li><a href="https://www.researchbuzz.me">ResearchBuzz Main Site</a></li>
+						<li><a href="https://www.rbfirehose.com">ResearchBuzz Firehose</a></li>
+						</ul>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</header>
+			<div class="feature">
+				<div class="feature-inner">
+				<h1>Happy Little Search Tools </h1>
+				</div>
+			</div>
+		
+	
+			<div id="content">
+				<div id="content-inner">
+				
+					<main id="contentbar">
+						<div class="article">
+
+
+<input type="text" class="searchq" value="comedy"> <br><br>
+
+<input type="text" class="zip" value="63101"> <br><br>
+
+<label for="local"><b>How local do you want this search to be?</b></label>
+<select name="local" class="local">
+<option value="0">VERY local (zip code search)</option>
+<option value="1">Local (zip code and city search)</option>
+</select><br><br>
+
+
+ <button onclick="freshfilter()">Freshen Your Search Results</button><br><br>
+
+ 
+
+
+
+					</main>
+					
+						<nav id="sidebar">
+						<div class="widget">
+							<h3>Gizmo Categories</h3>
+
+							<ul>
+							<li><a href="https://researchbuzz.github.io/Google.html">Google Search Tools</a></li>
+							<li><a href="https://researchbuzz.github.io/Twitter.html">Twitter Search Tools</a></li>
+							<li><a href="https://researchbuzz.github.io/News.html">News Search Tools</a></li>
+							<li><a href="https://researchbuzz.github.io/Blog.html">Blog Search Tools</a></li>
+							<li><a href="https://researchbuzz.github.io/Name.html">Name Search Tools</a></li>
+<li><a href="https://researchbuzz.github.io/OSINT.html">Search with OSINT Data</a></li>
+<li><a href="https://researchbuzz.github.io/notGithub.html">Random Gizmos Not on GitHub</a></li>
+
+
+							</ul>
+
+<br><br><a href="https://researchbuzz.github.io/">Fresh Local Search</a><br><br>
+						</div>
+					</nav>
+					
+					<div class="clr"></div>
+				</div>
+			</div>
+		
+			<div id="footerblurb">
+				<div id="footerblurb-inner">
+				
+					<div class="column">
+						<h2><span>What Is This?</span></h2>
+						<p>The RB Gizmos are a collection of search tools made with JavaScript and HTML.</p>
+					</div>	
+					<div class="column">
+						<h2><span>Why Is This?</span></h2>
+						<p>Because I've been writing about searching and search engines since 1996 and I'm obsessed with them.</p>
+					</div>
+					<div class="column">
+						<h2> </h2>
+						<p><script> </script></p>
+					</div>	
+					
+					<div class="clr"></div>
+				</div>
+			</div>
+			<footer id="footer">
+				<div id="footer-inner">
+					
+					<div class="clr"></div>
+				</div>
+			</footer>
+
+
+
+		</div>
+
+
+
+
+   <script>
+function freshfilter() {
+  
+// Getting the query
+
+var searchq = document.querySelector('.searchq').value;
+var zip = document.querySelector('.zip').value;
+var local = document.querySelector('.local').value;
+local = Number(local) 
+
+
+let locationVar =[]
+let latlongs = []
+let locals=[]
+let localchoice =""
+
+// Getting the full date and date elements
+
+var FullDate = new Date()
+var year = FullDate.getFullYear()
+var month = FullDate.getMonth()
+var day = FullDate.getDate()
+
+// Make an array of months
+
+let months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+// What's the name of the current month?
+
+let monthnow = months[month]
+
+console.log(monthnow)
+
+// Location Data
+
+
+  var api_url = "https://nominatim.openstreetmap.org/search.php?country=US&addressdetails=1&format=jsonv2&postalcode="+zip
+    
+fetch(api_url)
+   .then(function(response){
+        return response.json()
+   })
+    .then (function(res){
+      mapdata=res
+   console.log("Mapdata",mapdata)
+
+   var city = mapdata[0].address.city 
+   console.log(city)
+      locationVar.push(city)
+   var county = mapdata[0].address.county 
+   console.log(county)
+   locationVar.push(county)
+   var state = mapdata[0].address.state 
+   console.log(state)
+   locationVar.push(state)
+   var lat = mapdata[0].lat
+   console.log(lat)
+   latlongs.push(lat)
+   var lon = mapdata[0].lon
+   console.log(lon)
+   latlongs.push(lon)
+
+let locals = ["("+zip+")","("+zip+" | \""+city+"\")"]
+
+console.log(locals)
+localchoice = locals[local]
+console.log(localchoice)
+
+
+
+console.log(locationVar)
+console.log(latlongs)
+console.log(localchoice)
+
+
+// let's make an URL 
+
+var GoogleBase = "https://www.google.com/search?q="
+var nope = "-inurl:glassdoor -inurl:linked -inurl:yelp -inurl:amazon -inurl:ebay"
+
+var QuerySuffix = "(intitle:"+year+" | inurl:"+year+") \""+monthnow+"\" "+state+" "+localchoice+" "+searchq+" "+nope
+console.log(QuerySuffix)
+QuerySuffix = encodeURI(QuerySuffix)
+console.log(QuerySuffix)
+
+var completeURL = GoogleBase+QuerySuffix
+
+console.log(completeURL)
+
+})
+
+}
+   </script>
+</body>
+</html>
