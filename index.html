@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>ResearchBuzz Search Gizmos: Local Community Finder</title>
+		<title>ResearchBuzz Search Gizmos: Local Community/Events Finder</title>
 		<style type="text/css">
 			html, #page { padding:0; margin:0;}
 			body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
@@ -80,7 +80,7 @@
 			</header>
 			<div class="feature">
 				<div class="feature-inner">
-				<h1>Happy Little Search Tools </h1>
+				<h1>Local Community/Events Finder</h1>
 				</div>
 			</div>
 		
@@ -92,13 +92,15 @@
 						<div class="article">
 
 
-<input type="text" class="searchq" value="comedy"> <br><br>
+Please enter a general query for what you'd like to find (try a general topic or an event type like <i>game</i> or <i>race</i>.)<br>
+<input type="text" class="searchq" value="Fair"> <br><br>
 
+Enter your zip code. <br>
 <input type="text" class="zip" value="63101"> <br><br>
 
 <label for="local"><b>How local do you want this search to be?</b></label>
 <select name="local" class="local">
-<option value="0">VERY local (zip code search)</option>
+<option value="0">VERY local (zip code search only)</option>
 <option value="1">Local (zip code and city search)</option>
 </select><br><br>
 
@@ -220,7 +222,14 @@ fetch(api_url)
       mapdata=res
    console.log("Mapdata",mapdata)
 
-   var city = mapdata[0].address.city 
+if (mapdata.length == 0){
+
+  alert("That doesn't appear to be a valid zip code. Please try again?");
+
+
+}
+
+else{   var city = mapdata[0].address.city 
    console.log(city)
    if (city){}
    else {var city = mapdata[0].address.town}
@@ -241,7 +250,7 @@ localchoice = locals[local]
 console.log(localchoice)
 
 
-// let's make an URL 
+// let's make a Google URL
 
 var GoogleBase = "https://www.google.com/search?q="
 var nope = "-inurl:glassdoor -inurl:linked -inurl:yelp -inurl:amazon -inurl:ebay"
@@ -255,8 +264,29 @@ var completeURL = GoogleBase+QuerySuffix
 
 console.log(completeURL)
 
+
+// let's make a Twitter URL
+
+var TwitterBase = "https://twitter.com/search?filter:verified&f=live&q=geocode:"
+var km2 = ",2km"
+var km10 = ",10km"
+var latlonstring = lat+","+lon
+var verstring ="%20filter:verified"
+
+var completeTwitter = TwitterBase+latlonstring
+
+if (local <1) {completeTwitter = TwitterBase+latlonstring+km2}
+else {completeTwitter = TwitterBase+latlonstring+km10}
+
+var completeTwitterV = completeTwitter+verstring
+
+console.log(completeTwitter)
+console.log("Verified",completeTwitterV)
+
 var Bdiv = document.getElementById("results")
-Bdiv.innerHTML = "<a href=\""+completeURL+"\" target=\"_blank\">Click here to search for local community</a>"  
+Bdiv.innerHTML = "<a href=\""+completeURL+"\" target=\"_blank\">Click here to search for local community and events on Google</a><br><br><a href=\""+completeTwitter+"\" target=\"_blank\">Click here to search for local community on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><br><a href=\""+completeTwitterV+"\" target=\"_blank\">Click here to search for verified users in your local community on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><br>"
+
+}
 
 })
 
