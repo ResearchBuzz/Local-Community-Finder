@@ -268,23 +268,32 @@ console.log(completeURL)
 // let's make a Twitter URL
 
 var TwitterBase = "https://twitter.com/search?filter:verified&f=live&q=geocode:"
+var TwitterBaseq = "https://twitter.com/search?q="+searchq+"filter:verified&f=live&q=geocode:"
 var km2 = ",2km"
 var km10 = ",10km"
 var latlonstring = lat+","+lon
 var verstring ="%20filter:verified"
 
 var completeTwitter = TwitterBase+latlonstring
+var completeTwitterq = TwitterBaseq+latlonstring
 
-if (local <1) {completeTwitter = TwitterBase+latlonstring+km2}
-else {completeTwitter = TwitterBase+latlonstring+km10}
+if (local <1) {completeTwitter = TwitterBase+latlonstring+km2
+	      completeTwitterq = TwitterBaseq+latlonstring+km2
+	      }
+else {completeTwitter = TwitterBase+latlonstring+km10
+      completeTwitterq = TwitterBaseq+latlonstring+km10
+     }
 
 var completeTwitterV = completeTwitter+verstring
+var completeTwitterQV = completeTwitterq+verstring
 
 console.log(completeTwitter)
 console.log("Verified",completeTwitterV)
 
 var Bdiv = document.getElementById("results")
-Bdiv.innerHTML = "<a href=\""+completeURL+"\" target=\"_blank\">Click here to search for local community and events on Google</a><br><br><a href=\""+completeTwitter+"\" target=\"_blank\">Click here to search for local community on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><br><a href=\""+completeTwitterV+"\" target=\"_blank\">Click here to search for verified users in your local community on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><br>"
+Bdiv.innerHTML = "<a href=\""+completeURL+"\" target=\"_blank\">Click here to search for local community and events on Google</a><br><br><a href=\""+completeTwitter+"\" target=\"_blank\">Click here to search for local users on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><a href=\""+completeTwitterq+"\" target=\"_blank\">Click here for the same search with your query term included.<br><br><a href=\""+completeTwitterV+"\" target=\"_blank\">Click here to search for verified users in your local community on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><a href=\""+completeTwitterQV+"\" target=\"_blank\">Click here for the same search with your query term included.<br><br>"
+
+
 
 }
 
