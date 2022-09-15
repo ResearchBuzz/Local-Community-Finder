@@ -91,6 +91,9 @@
 					<main id="contentbar">
 						<div class="article">
 
+							<h3>Want to find local people and local events? Try the Local Community Finder.</h3>
+							
+							<h3>The LCF uses location and date information to build a Google query for events and news in your area. In addition, it creates a Twitter radius search of your zip code so you see what people in your area are talking about. All you need to provide are a zip code and a topic you'd like to find a community for.</h3>
 
 Please enter a general query for what you'd like to find (try a general topic or an event type like <i>game</i> or <i>race</i>.)<br>
 <input type="text" class="searchq" value="Fair"> <br><br>
@@ -98,7 +101,9 @@ Please enter a general query for what you'd like to find (try a general topic or
 Enter your zip code. <br>
 <input type="text" class="zip" value="63101"> <br><br>
 
-<label for="local"><b>How local do you want this search to be?</b></label>
+<label for="local"><b>How local do you want this search to be?</b></label><br>
+							<i>If you're in a small town and you're not getting many results with the VERY local option, try the Local option instead. It'll open up your search a lot.</i><br><br>
+							
 <select name="local" class="local">
 <option value="0">VERY local (zip code search only)</option>
 <option value="1">Local (zip code and city search)</option>
@@ -137,7 +142,7 @@ Enter your zip code. <br>
 
 							</ul>
 
-<br><br><a href="https://researchbuzz.github.io/">Fresh Local Search</a><br><br>
+<br><br><a href="https://researchbuzz.github.io/">Local Community Finder</a><br><br>
 						</div>
 					</nav>
 					
@@ -291,7 +296,7 @@ console.log(completeTwitter)
 console.log("Verified",completeTwitterV)
 
 var Bdiv = document.getElementById("results")
-Bdiv.innerHTML = "<a href=\""+completeURL+"\" target=\"_blank\">Click here to search for local community and events on Google</a><br><br><a href=\""+completeTwitter+"\" target=\"_blank\">Click here to search for local users on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><a href=\""+completeTwitterq+"\" target=\"_blank\">Click here for the same search with your query term included.<br><br><a href=\""+completeTwitterV+"\" target=\"_blank\">Click here to search for verified users in your local community on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><a href=\""+completeTwitterQV+"\" target=\"_blank\">Click here for the same search with your query term included.<br><br>"
+Bdiv.innerHTML = "<a href=\""+completeURL+"\" target=\"_blank\">Click here to search for local community and events on Google</a><br><br><a href=\""+completeTwitter+"\" target=\"_blank\">Click here to search for local users on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><a href=\""+completeTwitterq+"\" target=\"_blank\"><i>Click here for the same search with your query term included.</i><br><br><a href=\""+completeTwitterV+"\" target=\"_blank\">Click here to search for verified users in your local community on Twitter (2km radius if you're searching zip code only, 10km radius if you're searching for zip code and city.)<br><a href=\""+completeTwitterQV+"\" target=\"_blank\"><i>Click here for the same search with your query term included.</i><br><br>"
 
 
 
